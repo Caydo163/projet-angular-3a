@@ -3,7 +3,7 @@
 - aucune donnée mise en dur dans le projet (lien) => stub, ...
 - Liste de recettes => Bouton add => ouvre card a droite avec form recette
 	- form : ingredient => liste déroulante / tableau d'ingrédient avec bouton ajout ligne
-	- card recette => image, nom, desc (50 mots), bouton detail
+	- card recette => image, nom, desc (50 mots), bouton detail (ouvre route /recipe/:id)
 	- pagination 
 - Recette : id (uint>0), nom (string), desc (string), image (string : base64), ingredients[]
 - IngredientRecette : idIngrédient (uint), idRecette (uint), qte (uint)
@@ -13,3 +13,4 @@
 - Liste ingrédient => stub
 
 => MAT Angular
+uint => existe pas : number avec verif
