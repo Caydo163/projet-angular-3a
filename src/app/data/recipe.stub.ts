@@ -4,7 +4,7 @@ export const RECIPES: Recipe[] = [
     {
         id: 1,
         name: "Name 1",
-        description: "Tomate",
+        description: "Ipsum non in dolor aut delectus excepturi in nulla deleniti. Adeceezdzed",
         image: "",
         ingredients: []
     },

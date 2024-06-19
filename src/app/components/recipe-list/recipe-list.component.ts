@@ -26,6 +26,7 @@ export class RecipeListComponent {
   loadRecipes() {
     this.recipesNumber = this.recipeService.getRecipesNumber();
     this.recipes = this.recipeService.getByPage(this.currentPage, this.pageSize);
+    console.log(this.recipes);
   }
   
   ngOnInit() {

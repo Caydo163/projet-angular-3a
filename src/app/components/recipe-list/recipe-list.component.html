@@ -1,13 +1,13 @@
 <h1>Liste des recettes</h1>
 
-<div *ngFor="let recipe of recipes; let isLast = last">
-  <app-recipe-card
-    [id]="recipe.id"
-    [name]="recipe.name"
-    [description]="recipe.description"
-    [image]="recipe.image"
-  ></app-recipe-card>
-</div>
+<app-recipe-card
+  *ngFor="let recipe of recipes; let isLast = last"
+  [id]="recipe.id"
+  [name]="recipe.name"
+  [description]="recipe.description"
+  [image]="recipe.image"
+  [id]="recipe.id"
+></app-recipe-card>
 <mat-paginator
   [length]="recipesNumber"
   [pageSize]="pageSize"

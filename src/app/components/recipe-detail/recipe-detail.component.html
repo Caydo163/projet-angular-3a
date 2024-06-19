@@ -1,0 +1,20 @@
+<div *ngIf="recipe; else notFound">
+  <h1>
+    {{ recipe.name }}
+  </h1>
+  <img [src]="recipe.image" alt="Photo de la recette {{ recipe.name }}" />
+
+  <p>
+    {{ recipe.description }}
+  </p>
+
+  <h3>Ingrédients</h3>
+</div>
+
+<ng-template #notFound>
+  <p>
+    <i>Book not found</i>
+  </p>
+</ng-template>
+
+<a [routerLink]="['']">Retour</a>
