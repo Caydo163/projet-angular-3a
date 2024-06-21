@@ -3,6 +3,7 @@ import { MatButton } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { CookieService } from '../../services/cookie.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,6 +13,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  constructor() { }
+  isAdmin: boolean = false;
   
+  constructor(
+    private cookieService: CookieService,
+  ) { }
+  
+  ngDoCheck() {
+    this.isAdmin = this.cookieService.getBooleanCookie('isAdmin');
+  }
 }
