@@ -1,2 +1,14 @@
-<button mat-button [routerLink]="['login']">Login</button>
-<button mat-button [routerLink]="['ingredients']">Ingredient</button>
+<mat-toolbar>
+  <span class="navbar-name">Projet Angular</span>
+  <button mat-button [routerLink]="['login']">Login</button>
+  <button mat-button [routerLink]="['ingredients']">Ingredient</button>
+  <span class="spacer"></span>
+  <a
+    href="https://github.com/Caydo163/projet-angular-3a"
+    target="_blank"
+    mat-icon-button
+    aria-label="Github link"
+  >
+    <mat-icon>link</mat-icon>
+  </a>
+</mat-toolbar>
