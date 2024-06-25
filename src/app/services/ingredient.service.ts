@@ -16,4 +16,8 @@ export class IngredientService {
   getAll(): Ingredient[] {
     return this.ingredients;
   }
+  
+  getIngredientById(id : number): Ingredient | undefined {
+    return this.ingredients.find(ingredient => ingredient.id === id);
+  }
 }
