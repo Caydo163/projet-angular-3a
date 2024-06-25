@@ -30,22 +30,26 @@
     />
   </div>
 
-  <button
-    mat-flat-button
-    color="primary"
-    type="button"
-    (click)="addIngredientForm()"
-  >
-    Ajouter un ingrédient
-  </button>
-
   <section>
     <h2>Ingrédients</h2>
+    <button
+      mat-flat-button
+      color="primary"
+      type="button"
+      (click)="addIngredientForm()"
+    >
+      Ajouter un ingrédient
+    </button>
     <table>
-      <td>
-        <app-ingredient-line-form (sendIngredient)="addIngredient($event)">
-        </app-ingredient-line-form>
-      </td>
+      <tr *ngFor="let ingredient of recipe.ingredients">
+        <td>
+          <app-ingredient-line-form
+            (sendIngredient)="updateIngredient($event)"
+            [recipeIngredient]="ingredient"
+          >
+          </app-ingredient-line-form>
+        </td>
+      </tr>
     </table>
   </section>
 

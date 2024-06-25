@@ -35,12 +35,23 @@ export class RecipeFormComponent {
   constructor(private recipeService: RecipeService) {
   }
   
-  addIngredientForm() {
-    this.numberIngredient++;
+  ngOnInit() {
+    this.addIngredientForm();
   }
   
-  addIngredient(recipeIngredient: RecipeIngredient) {
-    this.recipe.ingredients.push(recipeIngredient);
+  private getMaxRecipeIngredientId() {
+    return Math.max(...this.recipe.ingredients.map(x => x.id));
+  }
+  
+  addIngredientForm() {
+    const id = this.getMaxRecipeIngredientId()+1;
+    this.recipe.ingredients.push({id: id, ingredientId: 0, recipeId: 0, quantity: 1});
+  }
+  
+  updateIngredient(recipeIngredient: RecipeIngredient) {
+    let ingredient = this.recipe.ingredients.find(x => x.id === recipeIngredient.id);
+    ingredient = recipeIngredient;
+
     console.log(this.recipe.ingredients);
   }
   
@@ -60,7 +71,9 @@ export class RecipeFormComponent {
 
   submit() {
     const image = this.recipe.image;
-    this.recipe = this.recipeForm.value;
+    const formValue = this.recipeForm.value;
+    this.recipe.name = formValue.name;
+    this.recipe.description = formValue.description;
     this.recipe.image = image;
 
     if (this.recipeForm.invalid) {
@@ -70,5 +83,6 @@ export class RecipeFormComponent {
     
     this.recipeService.addRecipe(this.recipe);
     this.recipeForm.reset();
+    this.recipe.ingredients = [];
   }
 }

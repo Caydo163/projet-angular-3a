@@ -39,11 +39,20 @@ export class RecipeService {
     return this.recipes.length;
   }
   
+  private setRecipeIngredientId(recipe: Recipe) {
+    recipe.ingredients.forEach(ingredient => {
+      ingredient.recipeId = recipe.id;
+    });
+  }
+  
   addRecipe(recipe: Recipe): Recipe {
     recipe.id = Number(recipe.id);
     if (!recipe.id || recipe.id === 0 || this.indexExist(recipe.id)) {
       recipe.id = this.getMaxId() + 1;
     }
+    console.log(recipe);
+    this.setRecipeIngredientId(recipe);
+    console.log(recipe);
     this.recipes.push(recipe);
     this.localStorageService.setRecipes(this.recipes);
     
