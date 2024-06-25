@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import {MatButton} from '@angular/material/button';
 import { MatFormFieldModule, MatHint } from '@angular/material/form-field';
@@ -18,6 +18,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './recipe-form.component.css'
 })
 export class RecipeFormComponent {
+  @Output() submitRecipe: EventEmitter<void> = new EventEmitter<void>();
+  
   recipe: Recipe = {id: 0, name: '', description: '', image: '', ingredients: []};
   numberIngredient: number = 1;
   
@@ -84,5 +86,10 @@ export class RecipeFormComponent {
     this.recipeService.addRecipe(this.recipe);
     this.recipeForm.reset();
     this.recipe.ingredients = [];
+    this.close();
+  }
+  
+  close() {
+    this.submitRecipe.emit();
   }
 }

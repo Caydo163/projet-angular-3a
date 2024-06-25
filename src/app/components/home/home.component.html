@@ -1,12 +1,12 @@
 <div class="card-container">
   <mat-card appearance="outlined" class="card">
     <mat-card-content class="card-content">
-      <app-recipe-list></app-recipe-list>
+      <app-recipe-list (formRecipe)="showFormRecipe($event)"></app-recipe-list>
     </mat-card-content>
   </mat-card>
-  <mat-card appearance="outlined" class="card">
+  <mat-card appearance="outlined" class="card" *ngIf="showRecipeForm">
     <mat-card-content class="card-content">
-      <app-recipe-form></app-recipe-form>
+      <app-recipe-form (submitRecipe)="hideFormRecipe()"></app-recipe-form>
     </mat-card-content>
   </mat-card>
 </div>

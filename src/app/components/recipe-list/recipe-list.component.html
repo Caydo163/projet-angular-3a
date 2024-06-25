@@ -1,4 +1,10 @@
-<h1>Liste des recettes</h1>
+<div class="header-container">
+  <h1>Liste des recettes</h1>
+
+  <button (click)="showRecipeForm(undefined)" mat-stroked-button>
+    Ajouter une recette
+  </button>
+</div>
 
 <div class="card-container">
   <app-recipe-card
