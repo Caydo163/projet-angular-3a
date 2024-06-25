@@ -1,5 +1,7 @@
 <mat-toolbar>
-  <span class="navbar-name">Projet Angular</span>
+  <button class="navbar-name" mat-button [routerLink]="['']">
+    Projet Angular
+  </button>
   @if (isAdmin === true) {
   <button mat-button [routerLink]="['logout']">Logout</button>
   } @else {

@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
 export class RecipeListComponent {
   recipes: Recipe[] = [];
   recipesNumber ?: number;
-  currentPage : number = 1;
+  currentPage : number = 0;
   pageSize : number = 5;
   
   constructor(
