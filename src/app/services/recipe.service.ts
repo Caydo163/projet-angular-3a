@@ -16,6 +16,9 @@ export class RecipeService {
   }
   
   private getMaxId(): number {
+    if (this.recipes.length === 0) {
+      return 0;
+    }
     return Math.max(...this.recipes.map(recipe => Number(recipe.id)));
   }
   
@@ -50,7 +53,6 @@ export class RecipeService {
     if (!recipe.id || recipe.id === 0 || this.indexExist(recipe.id)) {
       recipe.id = this.getMaxId() + 1;
     }
-    console.log(recipe);
     this.setRecipeIngredientId(recipe);
     console.log(recipe);
     this.recipes.push(recipe);

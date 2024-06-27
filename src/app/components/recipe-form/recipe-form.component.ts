@@ -42,6 +42,9 @@ export class RecipeFormComponent {
   }
   
   private getMaxRecipeIngredientId() {
+    if (this.recipe.ingredients.length === 0) {
+      return 0;
+    }
     return Math.max(...this.recipe.ingredients.map(x => x.id));
   }
   
@@ -53,8 +56,6 @@ export class RecipeFormComponent {
   updateIngredient(recipeIngredient: RecipeIngredient) {
     let ingredient = this.recipe.ingredients.find(x => x.id === recipeIngredient.id);
     ingredient = recipeIngredient;
-
-    console.log(this.recipe.ingredients);
   }
   
   handleUpload(event: Event) {
@@ -66,8 +67,7 @@ export class RecipeFormComponent {
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => {
-        console.log(reader.result)
-        this.recipe.image = reader.result as string;
+      this.recipe.image = reader.result as string;
     };
   }
 

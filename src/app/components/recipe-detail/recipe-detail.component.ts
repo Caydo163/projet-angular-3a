@@ -28,7 +28,7 @@ export class RecipeDetailComponent {
   loadIngredients() {
     if (this.recipe && this.recipe.ingredients) { 
       this.recipe.ingredients.forEach(recipeIngredient => {
-        const ingredient = this.ingredientService.getIngredientById(recipeIngredient.ingredientId);
+        const ingredient = this.ingredientService.getIngredientById(recipeIngredient.id);
         if (ingredient) {
           this.ingredients.push({
             name: ingredient.name,
