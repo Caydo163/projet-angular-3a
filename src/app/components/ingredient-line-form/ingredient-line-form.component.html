@@ -14,7 +14,7 @@
   </mat-select>
 </mat-form-field>
 
-<mat-form-field class="example-full-width">
+<mat-form-field>
   <mat-label>Quantité</mat-label>
   <input
     type="number"
@@ -25,3 +25,7 @@
     required="true"
   />
 </mat-form-field>
+
+<button mat-mini-fab aria-label="Delete line" (click)="deleteLine()">
+  <mat-icon>delete</mat-icon>
+</button>

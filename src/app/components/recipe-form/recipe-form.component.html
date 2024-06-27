@@ -45,6 +45,7 @@
         <td>
           <app-ingredient-line-form
             (sendIngredient)="updateIngredient($event)"
+            (deleteIngredient)="deleteIngredient($event)"
             [recipeIngredient]="ingredient"
           >
           </app-ingredient-line-form>

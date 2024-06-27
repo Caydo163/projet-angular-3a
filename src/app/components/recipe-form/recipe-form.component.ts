@@ -58,6 +58,11 @@ export class RecipeFormComponent {
     ingredient = recipeIngredient;
   }
   
+  deleteIngredient(recipeIngredient: RecipeIngredient) {
+    const index = this.recipe.ingredients.findIndex(x => x.id === recipeIngredient.id);
+    this.recipe.ingredients.splice(index, 1);
+  }
+  
   handleUpload(event: Event) {
     const file = (event?.target as HTMLInputElement)?.files?.[0];
     if (!file) {
