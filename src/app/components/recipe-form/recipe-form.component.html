@@ -2,14 +2,14 @@
 
 <form [formGroup]="recipeForm">
   <div>
-    <mat-form-field>
+    <mat-form-field class="form-field">
       <mat-label>Nom</mat-label>
       <input matInput type="text" name="name" formControlName="name" />
     </mat-form-field>
   </div>
 
   <div>
-    <mat-form-field>
+    <mat-form-field class="form-field">
       <mat-label>Description</mat-label>
       <textarea
         matInput
@@ -63,11 +63,6 @@
     >
       Ajouter une recette
     </button>
-    <button
-      mat-flat-button
-      (click)="close()"
-    >
-      Fermer
-    </button>
+    <button mat-flat-button (click)="close()">Fermer</button>
   </div>
 </form>

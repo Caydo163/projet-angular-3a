@@ -1,8 +1,14 @@
+<a [routerLink]="['']" mat-stroked-button>Retour</a>
+
 <div *ngIf="recipe; else notFound">
   <h1>
     {{ recipe.name }}
   </h1>
-  <img [src]="recipe.image" alt="Photo de la recette {{ recipe.name }}" />
+  <img
+    *ngIf="recipe.image"
+    [src]="recipe.image"
+    alt="Photo de la recette {{ recipe.name }}"
+  />
 
   <p>
     {{ recipe.description }}
@@ -22,5 +28,3 @@
     <i>Recette inexistante</i>
   </p>
 </ng-template>
-
-<a [routerLink]="['']" mat-stroked-button>Retour</a>
