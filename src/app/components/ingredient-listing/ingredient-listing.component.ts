@@ -25,4 +25,8 @@ export class IngredientListingComponent {
   ngOnInit() {
     this.ingredients = this.ingredientService.getAll();
   }
+  
+  ngOnChange() {
+    this.ingredients = this.ingredientService.getAll();
+  }
 }

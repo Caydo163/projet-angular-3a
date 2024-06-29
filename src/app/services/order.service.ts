@@ -27,7 +27,7 @@ export class OrderService {
   }
   
   addOrder(recipe: Recipe): void {
-    this.recipes.push(recipe);
+    this.recipes.unshift(recipe);
     this.localStorageService.setOrders(this.recipes);
   }
 }

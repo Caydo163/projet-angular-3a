@@ -32,6 +32,10 @@ export class OrderListComponent {
     this.loadOrders();
   }
   
+  ngOnChange() {
+    this.loadOrders();
+  }
+  
   pageChanged(event: PageEvent) {
     this.currentPage = event.pageIndex;
     this.pageSize = event.pageSize;

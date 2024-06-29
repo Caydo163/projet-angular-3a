@@ -36,6 +36,10 @@ export class RecipeListComponent {
     this.loadRecipes();
   }
   
+  ngOnChange() {
+    this.loadRecipes();
+  }
+  
   pageChanged(event: PageEvent) {
     this.currentPage = event.pageIndex;
     this.pageSize = event.pageSize;
