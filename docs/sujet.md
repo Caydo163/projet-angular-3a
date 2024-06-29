@@ -32,3 +32,10 @@ liens:
     - Si oui affiche page /ingredients
     - Si non redirection vers accueil
 
+Page ingredients :
+- Listing des ingrédients
+- Ajout d'un ingrédient
+- Modification d'un ingrédient
+- Utilisation via API
+
+sur la page "liste des recettes" vous rajoutez un bouton "Commandez" sur chaque recette qui va venir rajouter la recette commander dans une liste "Commandes en cours" qui sera afficher sur l'accueil du site
