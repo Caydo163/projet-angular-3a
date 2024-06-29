@@ -1,0 +1,23 @@
+<div class="header-container">
+  <h1>Commandes en cours</h1>
+</div>
+
+<div class="card-container">
+  <app-recipe-card
+    *ngFor="let recipe of orders; let isLast = last"
+    [id]="recipe.id"
+    [name]="recipe.name"
+    [description]="recipe.description"
+    [image]="recipe.image"
+    [id]="recipe.id"
+  ></app-recipe-card>
+</div>
+<mat-paginator
+  [length]="ordersNumber"
+  [pageSize]="pageSize"
+  aria-label="Select page"
+  [pageIndex]="currentPage"
+  [pageSizeOptions]="[5, 10]"
+  (page)="pageChanged($event)"
+>
+</mat-paginator>

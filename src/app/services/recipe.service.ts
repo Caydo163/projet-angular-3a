@@ -27,7 +27,7 @@ export class RecipeService {
   }
 
   getAll(): Recipe[] {
-    return this.localStorageService.getRecipes();
+    return this.recipes;
   }
   
   getByPage(page: number, pageSize: number): Recipe[] {

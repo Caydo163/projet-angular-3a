@@ -5,11 +5,12 @@ import { RecipeFormComponent } from '../recipe-form/recipe-form.component';
 import { MatCardModule } from '@angular/material/card';
 import { Recipe } from '../../models/recipe.model';
 import { CommonModule } from '@angular/common';
+import { OrderListComponent } from '../order-list/order-list.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterOutlet, RecipeListComponent, RecipeFormComponent, MatCardModule, CommonModule],
+  imports: [RouterOutlet, RecipeListComponent, RecipeFormComponent, MatCardModule, CommonModule, OrderListComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

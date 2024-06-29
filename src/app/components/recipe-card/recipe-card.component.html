@@ -15,5 +15,6 @@
   </mat-card-content>
   <mat-card-actions>
     <a mat-flat-button [routerLink]="['recipe', id]">Voir plus</a>
+    <a mat-button (click)="order()" color="primary">Commander</a>
   </mat-card-actions>
 </mat-card>
