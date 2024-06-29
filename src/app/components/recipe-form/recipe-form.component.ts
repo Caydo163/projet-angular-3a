@@ -1,9 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import {MatButton} from '@angular/material/button';
-import { MatFormFieldModule, MatHint } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import {MatTableModule} from '@angular/material/table';
 import { Recipe } from '../../models/recipe.model';
 import { RecipeService } from '../../services/recipe.service';
 import { IngredientLineFormComponent } from '../ingredient-line-form/ingredient-line-form.component';
@@ -13,7 +12,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-recipe-form',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, MatButton, MatFormFieldModule, MatHint, MatInputModule, MatTableModule, IngredientLineFormComponent, CommonModule],
+  imports: [FormsModule, ReactiveFormsModule, MatButton, MatFormFieldModule, MatInputModule, IngredientLineFormComponent, CommonModule],
   templateUrl: './recipe-form.component.html',
   styleUrl: './recipe-form.component.css'
 })

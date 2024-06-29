@@ -1,4 +1,10 @@
 <h1>Liste des ingrédients</h1>
+
+<a mat-flat-button color="primary" [routerLink]="['/ingredients/add']">
+  <mat-icon>add</mat-icon>
+  Ajouter un ingrédient
+</a>
+
 <table mat-table [dataSource]="ingredients" class="mat-elevation-z8">
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef>Id</th>
@@ -8,6 +14,19 @@
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef>Nom</th>
     <td mat-cell *matCellDef="let ingredient">{{ ingredient.name }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Action</th>
+    <td mat-cell *matCellDef="let ingredient">
+      <a
+        mat-icon-button
+        color="primary"
+        [routerLink]="['/ingredients/edit', ingredient.id]"
+      >
+        <mat-icon>edit</mat-icon>
+      </a>
+    </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
