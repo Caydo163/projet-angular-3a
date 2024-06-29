@@ -1,10 +1,11 @@
 <mat-form-field>
   <mat-label>Ingrédient</mat-label>
   <mat-select
-    [(ngModel)]="selectedIngredient"
+    [(ngModel)]="selectedIngredientId"
     name="food"
     (selectionChange)="onChange()"
     required="true"
+    [(value)]="selectedIngredientId"
   >
     <mat-option
       *ngFor="let ingredient of ingredients"
@@ -26,6 +27,11 @@
   />
 </mat-form-field>
 
-<button mat-mini-fab aria-label="Delete line" (click)="deleteLine()">
+<button
+  mat-mini-fab
+  aria-label="Delete line"
+  (click)="deleteLine()"
+  color="error"
+>
   <mat-icon>delete</mat-icon>
 </button>

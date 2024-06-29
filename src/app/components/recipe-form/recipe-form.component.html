@@ -1,45 +1,39 @@
 <h1>Ajouter une recette</h1>
 
 <form [formGroup]="recipeForm">
-  <div>
-    <mat-form-field class="form-field">
-      <mat-label>Nom</mat-label>
-      <input matInput type="text" name="name" formControlName="name" />
-    </mat-form-field>
-  </div>
+  <section>
+    <div>
+      <mat-form-field class="form-field">
+        <mat-label>Nom</mat-label>
+        <input matInput type="text" name="name" formControlName="name" />
+      </mat-form-field>
+    </div>
 
-  <div>
-    <mat-form-field class="form-field">
-      <mat-label>Description</mat-label>
-      <textarea
-        matInput
-        name="description"
-        formControlName="description"
-      ></textarea>
-    </mat-form-field>
-  </div>
+    <div>
+      <mat-form-field class="form-field">
+        <mat-label>Description</mat-label>
+        <textarea
+          matInput
+          name="description"
+          formControlName="description"
+        ></textarea>
+      </mat-form-field>
+    </div>
 
-  <div>
-    <label>Image</label>
-    <input
-      type="file"
-      name="image"
-      formControlName="image"
-      accept="image/png, image/jpeg, image/jpg"
-      (change)="handleUpload($event)"
-    />
-  </div>
+    <div>
+      <label>Image</label>
+      <input
+        type="file"
+        name="image"
+        formControlName="image"
+        accept="image/png, image/jpeg, image/jpg"
+        (change)="handleUpload($event)"
+      />
+    </div>
+  </section>
 
   <section>
     <h2>Ingrédients</h2>
-    <button
-      mat-flat-button
-      color="primary"
-      type="button"
-      (click)="addIngredientForm()"
-    >
-      Ajouter un ingrédient
-    </button>
     <table>
       <tr *ngFor="let ingredient of recipe.ingredients">
         <td>
@@ -52,18 +46,26 @@
         </td>
       </tr>
     </table>
+    <button
+      mat-stroked-button
+      color="primary"
+      type="button"
+      (click)="addIngredientForm()"
+    >
+      Ajouter un ingrédient
+    </button>
   </section>
 
-  <div>
+  <section>
     <button
       mat-flat-button
       color="primary"
       type="submit"
       (click)="submit()"
-      [disabled]="recipeForm.invalid"
+      [disabled]="recipeForm.invalid || recipe.ingredients.length === 0"
     >
       Ajouter une recette
     </button>
     <button mat-flat-button (click)="close()">Fermer</button>
-  </div>
+  </section>
 </form>

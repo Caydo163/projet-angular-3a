@@ -8,6 +8,7 @@ import { Ingredient } from '../../models/ingredient.model';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { IngredientService } from '../../services/ingredient.service';
 
 @Component({
   selector: 'app-ingredient-line-form',
@@ -23,19 +24,21 @@ export class IngredientLineFormComponent {
   @Input() recipeIngredient?: RecipeIngredient;
 
   quantity: number = 1;
-  selectedIngredient?: number;
-  ingredients: Ingredient[] = [{
-        id: 1,
-        name: "Tomate",
-    },
-    {
-        id: 2,
-        name: "Sel",
-    }];
+  selectedIngredientId?: number;
+  ingredients: Ingredient[] = [];
+  
+    constructor(
+      protected ingredientService: IngredientService,
+    ) {}
+  
+  ngOnInit() {
+    this.ingredients = this.ingredientService.getAll();
+    this.selectedIngredientId = this.ingredients.length > 0 ? this.ingredients[0].id : undefined;
+  }
 
   onChange() {
     if (this.recipeIngredient) {
-      this.recipeIngredient.ingredientId = this.selectedIngredient || 0;
+      this.recipeIngredient.ingredientId = this.selectedIngredientId || 0;
       this.recipeIngredient.quantity = this.quantity;
       
       this.sendIngredient.emit(this.recipeIngredient);

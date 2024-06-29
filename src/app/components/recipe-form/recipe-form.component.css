@@ -5,3 +5,7 @@ form {
 .form-field {
   width: 100%;
 }
+
+section {
+  margin-bottom: 40px;
+}

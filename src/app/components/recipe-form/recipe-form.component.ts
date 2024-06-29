@@ -77,17 +77,15 @@ export class RecipeFormComponent {
   }
 
   submit() {
-    const image = this.recipe.image;
-    const formValue = this.recipeForm.value;
-    this.recipe.name = formValue.name;
-    this.recipe.description = formValue.description;
-    this.recipe.image = image;
-
     if (this.recipeForm.invalid) {
       console.error('Form is invalid');
       return;
     }
-    
+
+    const formValue = this.recipeForm.value;
+    this.recipe.name = formValue.name;
+    this.recipe.description = formValue.description;
+
     this.recipeService.addRecipe(this.recipe);
     this.recipeForm.reset();
     this.recipe.ingredients = [];
