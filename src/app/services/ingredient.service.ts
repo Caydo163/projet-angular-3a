@@ -35,6 +35,14 @@ export class IngredientService {
     return this.ingredients;
   }
   
+  getByPage(page: number, pageSize: number): Ingredient[] {
+    return this.ingredients.slice(page * pageSize, (page + 1) * pageSize);
+  }
+  
+  getIngredientsNumber(): number {
+    return this.ingredients.length;
+  }
+  
   getIngredientById(id : number): Ingredient | undefined {
     return this.ingredients.find(ingredient => Number(ingredient.id) === id);
   }
