@@ -1,18 +1,26 @@
-<a [routerLink]="['']" mat-stroked-button>Retour</a>
-
 <div *ngIf="recipe; else notFound">
-  <h1>
-    {{ recipe.name }}
-  </h1>
-  <img
-    *ngIf="recipe.image"
-    [src]="recipe.image"
-    alt="Photo de la recette {{ recipe.name }}"
-  />
+  <div class="header">
+    <h1>
+      {{ recipe.name }}
+    </h1>
+    <a [routerLink]="['']" mat-stroked-button>Retour</a>
+  </div>
+  <div class="container">
+    <img
+      class="recipe-image"
+      *ngIf="recipe.image"
+      [src]="recipe.image"
+      alt="Photo de la recette {{ recipe.name }}"
+    />
+    <div class="recipe-description">
+      <b>Description</b>
+      <p>
+        {{ recipe.description }}
+      </p>
+    </div>
+  </div>
 
-  <p>
-    {{ recipe.description }}
-  </p>
+  <hr />
 
   <h3>Ingrédients</h3>
   <mat-list role="list" *ngIf="ingredients.length > 0">
