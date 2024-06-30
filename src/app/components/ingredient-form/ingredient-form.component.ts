@@ -48,6 +48,7 @@ export class IngredientFormComponent {
       console.error('Ingredient form is invalid');
       return;
     }
+    this.ingredient.name = this.ingredientForm.value.name;
     
     if (this.edit) {
       this.ingredientService.updateIngredient(this.ingredient);

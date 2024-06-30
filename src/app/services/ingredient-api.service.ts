@@ -24,7 +24,7 @@ export class IngredientApiService {
   
   updateIngredient(ingredient : Ingredient): void {
     const url = `${this.BASE_URL}/ingredients/${ingredient.id}`;
-    this.httpClient.patch<Ingredient>(url, ingredient)
+    this.httpClient.put<Ingredient>(url, ingredient)
       .subscribe(ingredient => console.log('ingredient updated', ingredient));
   }
 }
