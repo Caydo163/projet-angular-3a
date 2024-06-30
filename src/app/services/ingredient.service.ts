@@ -12,7 +12,7 @@ export class IngredientService {
   constructor(
     protected ingredientApiService: IngredientApiService,
   ) {
-    this.ingredients = INGREDIENTS;
+    // this.ingredients = INGREDIENTS;
     this.ingredientApiService.getIngredients().subscribe(apiIngredients => {
       apiIngredients.forEach(ingredient => {
         this.ingredients.push(ingredient);
@@ -36,7 +36,7 @@ export class IngredientService {
   }
   
   getIngredientById(id : number): Ingredient | undefined {
-    return this.ingredients.find(ingredient => ingredient.id === id);
+    return this.ingredients.find(ingredient => Number(ingredient.id) === id);
   }
   
   addIngredient(ingredient: Ingredient) {

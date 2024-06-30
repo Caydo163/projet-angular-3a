@@ -34,8 +34,8 @@ export class IngredientFormComponent {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       const ingredient = this.ingredientService.getIngredientById(parseInt(id || '0'));
+      this.edit = true;
       if (ingredient) {
-        this.edit = true;
         this.ingredient = ingredient;
         this.ingredientForm.setValue({name: this.ingredient.name});
       }
