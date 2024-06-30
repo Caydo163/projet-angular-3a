@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   selector: 'app-logout',
   standalone: true,
   imports: [],
-  templateUrl: './logout.component.html',
+  template: '',
 })
 export class LogoutComponent {
   constructor(

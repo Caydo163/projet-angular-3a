@@ -13,7 +13,6 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
   standalone: true,
   imports: [ReactiveFormsModule, MatButton, MatFormFieldModule, MatInputModule, CommonModule, RouterLink],
   templateUrl: './ingredient-form.component.html',
-  styleUrl: './ingredient-form.component.css'
 })
 export class IngredientFormComponent {
   ingredient: Ingredient = {id: 0, name: ''};

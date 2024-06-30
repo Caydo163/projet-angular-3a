@@ -15,7 +15,6 @@ import { IngredientService } from '../../services/ingredient.service';
   standalone: true,
   imports: [MatFormFieldModule, MatInputModule, MatSelectModule, FormsModule, CommonModule, MatIconModule, MatButtonModule],
   templateUrl: './ingredient-line-form.component.html',
-  styleUrl: './ingredient-line-form.component.css'
 })
 export class IngredientLineFormComponent {
   @Output() sendIngredient: EventEmitter<RecipeIngredient> = new EventEmitter<RecipeIngredient>();

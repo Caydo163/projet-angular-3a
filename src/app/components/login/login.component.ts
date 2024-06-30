@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   selector: 'app-login',
   standalone: true,
   imports: [],
-  templateUrl: './login.component.html',
+  template: '',
 })
 export class LoginComponent {
   constructor(
